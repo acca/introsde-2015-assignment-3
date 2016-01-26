@@ -1,4 +1,5 @@
 package introsde.assignment.soap;
+import introsde.document.exceptions.ResourceNotFound;
 import introsde.document.model.HealthMeasureHistory;
 import introsde.document.model.LifeStatus;
 import introsde.document.model.MeasureDefinition;
@@ -74,9 +75,16 @@ public class PeopleImpl implements People {
 	}
 
 	@Override
-	public LifeStatus readPersonMeasurement(Long id, String measureType, Long mid) {
-		// TODO Auto-generated method stub
-		return null;
+	public LifeStatus readPersonMeasurement(int id, String measureName, int mid) {		
+		if (mid != 0) {
+			return LifeStatus.getLifeStatusById(mid);	
+		}
+		else {
+			Person p = Person.getPersonById(id);
+			MeasureDefinition md = MeasureDefinition.getMeasureDefinitionByName(measureName);
+			return LifeStatus.getPersonMeasureByMeasureDef(p, md);
+		}
+		
 	}
 
 	@Override

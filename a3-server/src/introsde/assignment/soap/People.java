@@ -48,7 +48,7 @@ public interface People {
 
     @WebMethod(operationName="readPersonMeasurement")
     @WebResult(name="measure")
-    public LifeStatus readPersonMeasurement(Long id, String measureType, Long mid);
+    public LifeStatus readPersonMeasurement(@WebParam(name="personId")int id, @WebParam(name="measureType") String measureType, @WebParam(name="mid") int mid);
     
     @WebMethod(operationName="savePersonMeasurement")
     @WebResult(name="measureId")

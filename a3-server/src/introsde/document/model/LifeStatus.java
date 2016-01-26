@@ -134,4 +134,14 @@ public class LifeStatus implements Serializable {
 	    tx.commit();
 	    LifeCoachDao.instance.closeConnections(em);
 	}
+
+	public static LifeStatus getPersonMeasureByMeasureDef(Person p, MeasureDefinition md) {
+		EntityManager em = LifeCoachDao.instance.createEntityManager();		
+	    LifeStatus ls = (LifeStatus) em.createQuery("SELECT m FROM LifeStatus m WHERE m.measureDefinition = :measureDefinition AND m.person = :person")
+	    		.setParameter("person", p)
+	    		.setParameter("measureDefinition", md)
+	    		.getSingleResult();
+	    LifeCoachDao.instance.closeConnections(em);
+	    return ls;		
+	}
 }
