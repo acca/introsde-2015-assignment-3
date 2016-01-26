@@ -43,8 +43,8 @@ public interface People {
     
     // Methods from 6 to 9
     @WebMethod(operationName="readPersonHistory")
-    @WebResult(name="measures")
-    public List<HealthMeasureHistory> readPersonHistory(int id, String measureType);
+    @WebResult(name="HealthMeasureHistory")
+    public List<HealthMeasureHistory> readPersonHistory(@WebParam(name="personId") int id, @WebParam(name="measureType") String measureType);
 
     @WebMethod(operationName="readPersonMeasurement")
     @WebResult(name="measure")

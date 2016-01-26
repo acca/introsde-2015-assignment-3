@@ -45,7 +45,7 @@ public class PeopleImpl implements People {
     }
 
     @Override
-    public int deletePerson(int id) {
+    public int deletePerson(int id) {    	
         Person p = Person.getPersonById(id);
         if (p!=null) {
             Person.removePerson(p);
@@ -67,9 +67,10 @@ public class PeopleImpl implements People {
     }
 
 	@Override
-	public List<HealthMeasureHistory> readPersonHistory(int id, String measureType) {
-		int measureId = MeasureDefinition.getMeasureDefinitionIdByName(measureType).getIdMeasureDef();
-		return (List<HealthMeasureHistory>) HealthMeasureHistory.getPersonHealthMeasureHistoryByMeasureType(id, measureId);		
+	public List<HealthMeasureHistory> readPersonHistory(int id, String measureName) {
+		Person p = Person.getPersonById(id);
+		MeasureDefinition md = MeasureDefinition.getMeasureDefinitionByName(measureName);		
+		return HealthMeasureHistory.getPersonHealthMeasureHistoryByMeasureDef(p, md);
 	}
 
 	@Override
