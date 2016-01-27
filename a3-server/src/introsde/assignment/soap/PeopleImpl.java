@@ -127,8 +127,7 @@ public class PeopleImpl implements People {
 
 	@Override
 	public List<MeasureDefinition> readMeasureTypes() {
-		// TODO Auto-generated method stub
-		return null;
+		return MeasureDefinition.getAll();
 	}
 
 }
