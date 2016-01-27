@@ -1,7 +1,7 @@
 package introsde.assignment.soap;
 import introsde.document.exceptions.ResourceNotFound;
 import introsde.document.model.HealthMeasureHistory;
-import introsde.document.model.LifeStatus;
+import introsde.document.model.Measure;
 import introsde.document.model.MeasureDefinition;
 import introsde.document.model.Person;
 
@@ -65,29 +65,29 @@ public class PeopleImpl implements People {
 	}
 
 	@Override
-	public LifeStatus readPersonMeasurement(int id, String measureName, int mid) {		
+	public Measure readPersonMeasurement(int id, String measureName, int mid) {		
 		if (mid != 0) {
-			return LifeStatus.getLifeStatusById(mid);	
+			return Measure.getLifeStatusById(mid);	
 		}
 		else {
 			Person p = Person.getPersonById(id);
 			MeasureDefinition md = MeasureDefinition.getMeasureDefinitionByName(measureName);
-			return LifeStatus.getPersonMeasureByMeasureDef(p, md);
+			return Measure.getPersonMeasureByMeasureDef(p, md);
 		}
 		
 	}
 
 	@Override
-	public int savePersonMeasurement(int id, LifeStatus m) {
+	public int savePersonMeasurement(int id, Measure m) {
 		Person p = Person.getPersonById(id);
-		LifeStatus ls = LifeStatus.getPersonMeasureByMeasureDef(p, m.getMeasureDefinition());
+		Measure ls = Measure.getPersonMeasureByMeasureDef(p, m.getMeasureDefinition());
 		if (ls == null) {
 			// Create person measure
-        	ls = new LifeStatus();
+        	ls = new Measure();
         	ls.setMeasureDefinition(m.getMeasureDefinition());
         	ls.setPerson(p);
         	ls.setValue(m.getValue());
-        	ls = LifeStatus.saveLifeStatus(ls);
+        	ls = Measure.saveLifeStatus(ls);
             // Insert old measure in history
         	int newId = udpateHistory(ls);
             return newId;
@@ -95,7 +95,7 @@ public class PeopleImpl implements People {
 		else if (ls.getPerson().getIdPerson() == id) {
             // Update person measure
         	ls.setValue(m.getValue());
-        	LifeStatus.updateLifeStatus(ls);
+        	Measure.updateLifeStatus(ls);
             // Insert old measure in history
         	int newId = udpateHistory(ls);
             return newId;
@@ -104,7 +104,7 @@ public class PeopleImpl implements People {
         }		
 	}
 
-	private int udpateHistory(LifeStatus ls) {
+	private int udpateHistory(Measure ls) {
 		HealthMeasureHistory historyMeasure = new HealthMeasureHistory();
     	historyMeasure.setMeasureDefinition(ls.getMeasureDefinition());
     	historyMeasure.setPerson(ls.getPerson());

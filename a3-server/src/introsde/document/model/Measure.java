@@ -19,6 +19,7 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+
 import javax.persistence.OneToOne;
 
 /**
@@ -27,9 +28,9 @@ import javax.persistence.OneToOne;
  */
 @Entity
 @Table(name = "LifeStatus")
-@NamedQuery(name = "LifeStatus.findAll", query = "SELECT l FROM LifeStatus l")
+@NamedQuery(name = "Measure.findAll", query = "SELECT l FROM Measure l")
 @XmlRootElement(name="Measure")
-public class LifeStatus implements Serializable {
+public class Measure implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -51,7 +52,7 @@ public class LifeStatus implements Serializable {
 	@JoinColumn(name="idPerson",referencedColumnName="idPerson")
 	private Person person;
 
-	public LifeStatus() {
+	public Measure() {
 	}
 
 	public int getIdMeasure() {
@@ -91,21 +92,21 @@ public class LifeStatus implements Serializable {
 	// Database operations
 	// Notice that, for this example, we create and destroy and entityManager on each operation. 
 	// How would you change the DAO to not having to create the entity manager every time? 
-	public static LifeStatus getLifeStatusById(int lifestatusId) {
+	public static Measure getLifeStatusById(int lifestatusId) {
 		EntityManager em = LifeCoachDao.instance.createEntityManager();
-		LifeStatus p = em.find(LifeStatus.class, lifestatusId);
+		Measure p = em.find(Measure.class, lifestatusId);
 		LifeCoachDao.instance.closeConnections(em);
 		return p;
 	}
 	
-	public static List<LifeStatus> getAll() {
+	public static List<Measure> getAll() {
 		EntityManager em = LifeCoachDao.instance.createEntityManager();
-	    List<LifeStatus> list = em.createNamedQuery("LifeStatus.findAll", LifeStatus.class).getResultList();
+	    List<Measure> list = em.createNamedQuery("LifeStatus.findAll", Measure.class).getResultList();
 	    LifeCoachDao.instance.closeConnections(em);
 	    return list;
 	}
 	
-	public static LifeStatus saveLifeStatus(LifeStatus p) {
+	public static Measure saveLifeStatus(Measure p) {
 		EntityManager em = LifeCoachDao.instance.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
@@ -115,7 +116,7 @@ public class LifeStatus implements Serializable {
 	    return p;
 	}
 	
-	public static LifeStatus updateLifeStatus(LifeStatus p) {
+	public static Measure updateLifeStatus(Measure p) {
 		EntityManager em = LifeCoachDao.instance.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
@@ -125,7 +126,7 @@ public class LifeStatus implements Serializable {
 	    return p;
 	}
 	
-	public static void removeLifeStatus(LifeStatus p) {
+	public static void removeLifeStatus(Measure p) {
 		EntityManager em = LifeCoachDao.instance.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
@@ -135,11 +136,11 @@ public class LifeStatus implements Serializable {
 	    LifeCoachDao.instance.closeConnections(em);
 	}
 
-	public static LifeStatus getPersonMeasureByMeasureDef(Person p, MeasureDefinition md) {
+	public static Measure getPersonMeasureByMeasureDef(Person p, MeasureDefinition md) {
 		EntityManager em = LifeCoachDao.instance.createEntityManager();
-		LifeStatus ls = null;
+		Measure ls = null;
 	    try {
-	    	ls = (LifeStatus) em.createQuery("SELECT m FROM LifeStatus m WHERE m.measureDefinition = :measureDefinition AND m.person = :person")
+	    	ls = (Measure) em.createQuery("SELECT m FROM LifeStatus m WHERE m.measureDefinition = :measureDefinition AND m.person = :person")
 		    		.setParameter("person", p)
 		    		.setParameter("measureDefinition", md)
 		    		.getSingleResult();	

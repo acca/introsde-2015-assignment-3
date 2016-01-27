@@ -1,6 +1,6 @@
 package introsde.assignment.soap;
 import introsde.document.model.HealthMeasureHistory;
-import introsde.document.model.LifeStatus;
+import introsde.document.model.Measure;
 import introsde.document.model.MeasureDefinition;
 import introsde.document.model.Person;
 
@@ -44,11 +44,11 @@ public interface People {
 
     @WebMethod(operationName="readPersonMeasurement")
     @WebResult(name="measure")
-    public LifeStatus readPersonMeasurement(@WebParam(name="personId")int id, @WebParam(name="measureType") String measureType, @WebParam(name="mid") int mid);
+    public Measure readPersonMeasurement(@WebParam(name="personId")int id, @WebParam(name="measureType") String measureType, @WebParam(name="mid") int mid);
     
     @WebMethod(operationName="savePersonMeasurement")
     @WebResult(name="measureId")
-    public int savePersonMeasurement(@WebParam(name="personId") int id, @WebParam(name="measure") LifeStatus m);
+    public int savePersonMeasurement(@WebParam(name="personId") int id, @WebParam(name="measure") Measure m);
     
     @WebMethod(operationName="readMeasureTypes")
     @WebResult(name="measureTypes")

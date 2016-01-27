@@ -1,13 +1,15 @@
 package introsde.document.model;
 
 import introsde.document.dao.LifeCoachDao;
-import introsde.document.model.LifeStatus;
+import introsde.document.model.Measure;
 
 import java.io.Serializable;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 import java.util.Date;
 import java.util.Iterator;
@@ -55,8 +57,8 @@ public class Person implements Serializable {
 	private String email;
 
 	// mappedBy must be equal to the name of the attribute in LifeStatus that maps this relation
-	@OneToMany(mappedBy="person",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	private List<LifeStatus> lifeStatus;
+	@OneToMany(mappedBy="person",cascade=CascadeType.ALL,fetch=FetchType.EAGER)	
+	private List<Measure> lifeStatus;
 	
 	public Person() {
 	}
@@ -110,21 +112,22 @@ public class Person implements Serializable {
 	}
 
 	// the XmlElementWrapper defines the name of node in which the list of LifeStatus elements
-	// will be inserted
-	@XmlElementWrapper(name = "Measurements")
-	public List<LifeStatus> getLifeStatus() {
+	// will be inserted	
+	@XmlElementWrapper(name = "currenHealth")
+	@XmlElement(name="measure")
+	public List<Measure> getLifeStatus() {
 	    return lifeStatus;
 	}
 
-	public void setLifeStatus(List<LifeStatus> param) {
+	public void setLifeStatus(List<Measure> param) {
 	    this.lifeStatus = param;
 	}
 	
-	public LifeStatus getLifeStatus(String measureName) {
-		LifeStatus ls = null;
-		Iterator<LifeStatus> i = lifeStatus.iterator();
+	public Measure getLifeStatus(String measureName) {
+		Measure ls = null;
+		Iterator<Measure> i = lifeStatus.iterator();
 		while (i.hasNext()) {
-			LifeStatus lsi = i.next();
+			Measure lsi = i.next();
 			if (lsi.getMeasureDefinition().getMeasureName().equals(measureName)) {
 				ls = lsi;
 				continue;

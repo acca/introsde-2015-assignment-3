@@ -1,7 +1,7 @@
 package introsde.document.test;
 
 import static org.junit.Assert.*;
-import introsde.document.model.LifeStatus;
+import introsde.document.model.Measure;
 import introsde.document.model.MeasureDefinition;
 import introsde.document.model.Person;
 
@@ -75,7 +75,7 @@ public class JPAStarterTest {
 
 	@Test
 	public void testLifeStatusListDao() {
-		List<LifeStatus> mList = LifeStatus.getAll();
+		List<Measure> mList = Measure.getAll();
 		assertEquals("Only one LifeStatus in DB", 1, mList.size());
 	}
 
@@ -86,7 +86,7 @@ public class JPAStarterTest {
 		assertEquals("Chuck norris is here", "Chuck", chuck.getName());
 		// add a new measure value to the list of measurements of chuck
 		MeasureDefinition md = MeasureDefinition.getMeasureDefinitionById(1);
-		LifeStatus l = new LifeStatus();
+		Measure l = new Measure();
 		l.setMeasureDefinition(md);
 		l.setValue("85");
 		chuck.getLifeStatus().add(l);
