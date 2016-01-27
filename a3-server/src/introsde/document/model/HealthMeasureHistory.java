@@ -4,7 +4,6 @@ import introsde.document.dao.LifeCoachDao;
 import introsde.document.model.Person;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -50,7 +49,7 @@ public class HealthMeasureHistory implements Serializable {
 	@Column(name="idMeasureHistory")
 	private int idMeasureHistory;
 
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="timestamp")
 	private Date timestamp;
 
