@@ -136,12 +136,20 @@ public class LifeStatus implements Serializable {
 	}
 
 	public static LifeStatus getPersonMeasureByMeasureDef(Person p, MeasureDefinition md) {
-		EntityManager em = LifeCoachDao.instance.createEntityManager();		
-	    LifeStatus ls = (LifeStatus) em.createQuery("SELECT m FROM LifeStatus m WHERE m.measureDefinition = :measureDefinition AND m.person = :person")
-	    		.setParameter("person", p)
-	    		.setParameter("measureDefinition", md)
-	    		.getSingleResult();
+		EntityManager em = LifeCoachDao.instance.createEntityManager();
+		LifeStatus ls = null;
+	    try {
+	    	ls = (LifeStatus) em.createQuery("SELECT m FROM LifeStatus m WHERE m.measureDefinition = :measureDefinition AND m.person = :person")
+		    		.setParameter("person", p)
+		    		.setParameter("measureDefinition", md)
+		    		.getSingleResult();	
+	    }
+	    catch (Exception NoResultException) {
+	    	System.out.println("Person " + p + " currently does not have this measure: " + md );
+	    }
+		 
 	    LifeCoachDao.instance.closeConnections(em);
 	    return ls;		
 	}
+
 }

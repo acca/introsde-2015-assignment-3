@@ -28,7 +28,6 @@ public interface People {
     @WebMethod(operationName="createPerson")
     @WebResult(name="personId") 
     public int createPerson(@WebParam(name="person") Person person);
-
     @WebMethod(operationName="updatePerson")
     @WebResult(name="personId") 
     public int updatePerson(@WebParam(name="person") Person person);
@@ -52,7 +51,7 @@ public interface People {
     
     @WebMethod(operationName="savePersonMeasurement")
     @WebResult(name="measureId")
-    public int savePersonMeasurement(Long id, LifeStatus m);
+    public int savePersonMeasurement(@WebParam(name="personId") int id, @WebParam(name="measure") LifeStatus m);
     
     @WebMethod(operationName="readMeasureTypes")
     @WebResult(name="measureTypes")

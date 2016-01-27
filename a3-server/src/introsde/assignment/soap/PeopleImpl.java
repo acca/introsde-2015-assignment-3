@@ -5,6 +5,7 @@ import introsde.document.model.LifeStatus;
 import introsde.document.model.MeasureDefinition;
 import introsde.document.model.Person;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -88,9 +89,40 @@ public class PeopleImpl implements People {
 	}
 
 	@Override
-	public int savePersonMeasurement(Long id, LifeStatus m) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int savePersonMeasurement(int id, LifeStatus m) {
+		Person p = Person.getPersonById(id);
+		LifeStatus ls = LifeStatus.getPersonMeasureByMeasureDef(p, m.getMeasureDefinition());
+		if (ls == null) {
+			// Create person measure
+        	ls = new LifeStatus();
+        	ls.setMeasureDefinition(m.getMeasureDefinition());
+        	ls.setPerson(p);
+        	ls.setValue(m.getValue());
+        	ls = LifeStatus.saveLifeStatus(ls);
+            // Insert old measure in history
+        	int newId = udpateHistory(ls);
+            return newId;
+		}
+		else if (ls.getPerson().getIdPerson() == id) {
+            // Update person measure
+        	ls.setValue(m.getValue());
+        	LifeStatus.updateLifeStatus(ls);
+            // Insert old measure in history
+        	int newId = udpateHistory(ls);
+            return newId;
+        } else {
+            return -1;
+        }		
+	}
+
+	private int udpateHistory(LifeStatus ls) {
+		HealthMeasureHistory historyMeasure = new HealthMeasureHistory();
+    	historyMeasure.setMeasureDefinition(ls.getMeasureDefinition());
+    	historyMeasure.setPerson(ls.getPerson());
+    	historyMeasure.setTimestamp(new Date());
+    	historyMeasure.setValue(ls.getValue());
+        HealthMeasureHistory hm = HealthMeasureHistory.saveHealthMeasureHistory(historyMeasure);
+        return hm.getIdMeasureHistory();
 	}
 
 	@Override

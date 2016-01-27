@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -29,10 +30,11 @@ public class Person implements Serializable {
 	// This holds also for the other tables
 	// SQLITE implements auto increment ids through named sequences that are stored in a 
 	// special table named "sqlite_sequence"
-	@GeneratedValue(generator="sqlite_person")
+	@GeneratedValue(generator="sqlite_person", strategy=GenerationType.IDENTITY)
 	@TableGenerator(name="sqlite_person", table="sqlite_sequence",
 	    pkColumnName="name", valueColumnName="seq",
-	    pkColumnValue="Person")
+	    pkColumnValue="Person",
+	    initialValue=1, allocationSize=1)
 	@Column(name="idPerson")
 	private int idPerson;
 
@@ -116,6 +118,19 @@ public class Person implements Serializable {
 
 	public void setLifeStatus(List<LifeStatus> param) {
 	    this.lifeStatus = param;
+	}
+	
+	public LifeStatus getLifeStatus(String measureName) {
+		LifeStatus ls = null;
+		Iterator<LifeStatus> i = lifeStatus.iterator();
+		while (i.hasNext()) {
+			LifeStatus lsi = i.next();
+			if (lsi.getMeasureDefinition().getMeasureName().equals(measureName)) {
+				ls = lsi;
+				continue;
+			}
+		}		
+		return ls;
 	}
 	
 	// Database operations
