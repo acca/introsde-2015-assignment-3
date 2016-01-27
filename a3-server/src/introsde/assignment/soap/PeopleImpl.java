@@ -57,17 +57,6 @@ public class PeopleImpl implements People {
         }
     }
 
-    @Override
-    public int updatePersonHP(int id, LifeStatus hp) {
-        LifeStatus ls = LifeStatus.getLifeStatusById(hp.getIdMeasure());
-        if (ls.getPerson().getIdPerson() == id) {
-            LifeStatus.updateLifeStatus(hp);
-            return hp.getIdMeasure();
-        } else {
-            return -1;
-        }
-    }
-
 	@Override
 	public List<HealthMeasureHistory> readPersonHistory(int id, String measureName) {
 		Person p = Person.getPersonById(id);

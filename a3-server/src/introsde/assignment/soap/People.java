@@ -21,13 +21,14 @@ public interface People {
     @WebResult(name="person") 
     public Person readPerson(@WebParam(name="personId") int id);
 
-    @WebMethod(operationName="getPeopleList")
+    @WebMethod(operationName="readPersonList")
     @WebResult(name="people") 
     public List<Person> readPersonList();
 
     @WebMethod(operationName="createPerson")
     @WebResult(name="personId") 
     public int createPerson(@WebParam(name="person") Person person);
+    
     @WebMethod(operationName="updatePerson")
     @WebResult(name="personId") 
     public int updatePerson(@WebParam(name="person") Person person);
@@ -35,10 +36,6 @@ public interface People {
     @WebMethod(operationName="deletePerson")
     @WebResult(name="personId") 
     public int deletePerson(@WebParam(name="personId") int id);
-
-    @WebMethod(operationName="updatePersonHealthProfile")
-    @WebResult(name="hpId") 
-    public int updatePersonHP(@WebParam(name="personId") int id, @WebParam(name="healthProfile") LifeStatus hp);
     
     // Methods from 6 to 9
     @WebMethod(operationName="readPersonHistory")
