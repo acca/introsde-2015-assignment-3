@@ -5,6 +5,7 @@ import introsde.document.model.Measure;
 import introsde.document.model.MeasureDefinition;
 import introsde.document.model.Person;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -36,8 +37,30 @@ public class PeopleImpl implements People {
 
     @Override
     public int createPerson(Person person) {
-        Person.savePerson(person);
-        return person.getIdPerson();
+    	Person newPerson = new Person();
+    	// Update person informations
+    	newPerson.setName(person.getName());
+    	newPerson.setUsername(person.getUsername());
+    	newPerson.setLastname(person.getLastname());
+    	newPerson.setEmail(person.getEmail());
+    	newPerson.setBirthdate(person.getBirthdate());    	    	    
+    	
+    	// If present update person healthProfile
+    	if (person.getLifeStatus() != null) {
+    		List<Measure> newMeasureList = new ArrayList<Measure>();    	
+        	Iterator<Measure> i = person.getLifeStatus().iterator();
+        	while(i.hasNext()){
+        		Measure m = i.next();
+        		Measure newMeasure = new Measure();
+        		newMeasure.setMeasureDefinition(m.getMeasureDefinition());
+        		newMeasure.setPerson(newPerson);
+        		newMeasure.setValue(m.getValue());
+        		newMeasureList.add(newMeasure);
+        	}    	    	
+        	newPerson.setLifeStatus(newMeasureList);	
+    	}    	
+    	Person dbPerson = Person.savePerson(newPerson);
+        return dbPerson.getIdPerson();        
     }
 
     @Override

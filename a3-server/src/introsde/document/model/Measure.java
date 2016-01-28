@@ -6,6 +6,7 @@ import introsde.document.model.MeasureDefinition;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
@@ -48,7 +49,6 @@ public class Measure implements Serializable {
 	@JoinColumn(name = "idMeasureDef", referencedColumnName = "idMeasureDef", insertable = true, updatable = true)
 	private MeasureDefinition measureDefinition;
 	
-	@ManyToOne
 	@JoinColumn(name="idPerson",referencedColumnName="idPerson")
 	private Person person;
 

@@ -57,7 +57,7 @@ public class Person implements Serializable {
 	private String email;
 
 	// mappedBy must be equal to the name of the attribute in LifeStatus that maps this relation
-	@OneToMany(mappedBy="person",cascade=CascadeType.ALL,fetch=FetchType.EAGER)	
+	@OneToMany(mappedBy="person",cascade={CascadeType.ALL},fetch=FetchType.EAGER)	
 	private List<Measure> lifeStatus;
 	
 	public Person() {
