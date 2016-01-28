@@ -42,6 +42,8 @@ public class PeopleImpl implements People {
 
     @Override
     public int updatePerson(Person person) {
+    	// Does not update the healthProfile information 
+    	person.setLifeStatus(null);
         Person.updatePerson(person);
         return person.getIdPerson();
     }
