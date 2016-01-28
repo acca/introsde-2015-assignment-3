@@ -1,5 +1,4 @@
 package introsde.assignment.soap;
-import introsde.document.exceptions.ResourceNotFound;
 import introsde.document.model.HealthMeasureHistory;
 import introsde.document.model.Measure;
 import introsde.document.model.MeasureDefinition;
@@ -32,10 +31,18 @@ public class PeopleImpl implements People {
 
     @Override
     public List<Person> readPersonList() {
-        return Person.getAll();
+        return filterPersonList(Person.getAll());
     }
 
-    @Override
+    private List<Person> filterPersonList(List<Person> all) {    	
+    	Iterator<Person> i = all.iterator();
+    	while(i.hasNext()){
+    		i.next().setLifeStatus(null);
+    	}
+    	return all;
+	}
+
+	@Override
     public int createPerson(Person person) {
     	Person newPerson = new Person();
     	// Update person informations
