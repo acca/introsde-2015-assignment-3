@@ -33,7 +33,7 @@ public interface People {
      *     returns introsde.assignment.soap.Person
      */
     @WebMethod
-    @WebResult(name = "person", targetNamespace = "http://soap.assignment.introsde/")
+    @WebResult(name = "person", targetNamespace = "")
     @RequestWrapper(localName = "readPerson", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.ReadPerson")
     @ResponseWrapper(localName = "readPersonResponse", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.ReadPersonResponse")
     @Action(input = "http://soap.assignment.introsde/People/readPersonRequest", output = "http://soap.assignment.introsde/People/readPersonResponse")
@@ -65,7 +65,7 @@ public interface People {
     @ResponseWrapper(localName = "createPersonResponse", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.CreatePersonResponse")
     @Action(input = "http://soap.assignment.introsde/People/createPersonRequest", output = "http://soap.assignment.introsde/People/createPersonResponse")
     public int createPerson(
-        @WebParam(name = "person", targetNamespace = "http://soap.assignment.introsde/")
+        @WebParam(name = "person", targetNamespace = "")
         Person person);
 
     /**
@@ -80,7 +80,7 @@ public interface People {
     @ResponseWrapper(localName = "updatePersonResponse", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.UpdatePersonResponse")
     @Action(input = "http://soap.assignment.introsde/People/updatePersonRequest", output = "http://soap.assignment.introsde/People/updatePersonResponse")
     public int updatePerson(
-        @WebParam(name = "person", targetNamespace = "http://soap.assignment.introsde/")
+        @WebParam(name = "person", targetNamespace = "")
         Person person);
 
     /**

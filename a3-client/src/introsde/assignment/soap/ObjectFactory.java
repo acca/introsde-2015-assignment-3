@@ -32,7 +32,6 @@ public class ObjectFactory {
     private final static QName _ReadPersonHistoryResponse_QNAME = new QName("http://soap.assignment.introsde/", "readPersonHistoryResponse");
     private final static QName _ReadPersonListResponse_QNAME = new QName("http://soap.assignment.introsde/", "readPersonListResponse");
     private final static QName _SavePersonMeasurementResponse_QNAME = new QName("http://soap.assignment.introsde/", "savePersonMeasurementResponse");
-    private final static QName _Person_QNAME = new QName("http://soap.assignment.introsde/", "person");
     private final static QName _ReadPerson_QNAME = new QName("http://soap.assignment.introsde/", "readPerson");
     private final static QName _ReadPersonList_QNAME = new QName("http://soap.assignment.introsde/", "readPersonList");
     private final static QName _Measure_QNAME = new QName("http://soap.assignment.introsde/", "Measure");
@@ -317,15 +316,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "savePersonMeasurementResponse")
     public JAXBElement<SavePersonMeasurementResponse> createSavePersonMeasurementResponse(SavePersonMeasurementResponse value) {
         return new JAXBElement<SavePersonMeasurementResponse>(_SavePersonMeasurementResponse_QNAME, SavePersonMeasurementResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Person }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "person")
-    public JAXBElement<Person> createPerson(Person value) {
-        return new JAXBElement<Person>(_Person_QNAME, Person.class, null, value);
     }
 
     /**
