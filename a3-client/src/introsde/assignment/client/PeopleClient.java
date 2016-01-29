@@ -116,6 +116,7 @@ public class PeopleClient{
 
 		// Extra #1
 		pl("Extra #1");
+		pl("Database slite used.");
 
 		// Extra #2 Method #10
 		pl("Extra #2 - Method #10");
