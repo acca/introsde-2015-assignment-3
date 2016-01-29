@@ -84,7 +84,7 @@ public class PeopleClient{
 
 		// Method #7
 		pl("Method #7");
-		Measure m = people.readPersonMeasurement(pId, "height", 1758);
+		Measure m = people.readPersonMeasurement(pId, "height", 1807);
 		mc = JAXBContext.newInstance(Measure.class);
 		asString(mc,m);
 		//m.toString();
