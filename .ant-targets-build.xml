@@ -1,0 +1,7 @@
+clean
+compile
+create.war
+download-ivy
+init
+install-ivy
+resolve

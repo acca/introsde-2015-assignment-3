@@ -1,1 +1,12 @@
-/build/
+.settings/
+.project
+.classpath
+*.settings/
+*.project
+*.classpath
+
+.DS_Store
+*.DS_Store
+
+*.jar
+build

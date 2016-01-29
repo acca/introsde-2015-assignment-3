@@ -1,0 +1,10 @@
+clean
+create.war
+download-ivy
+execute.client
+init
+install
+install-ivy
+junit
+resolve
+start
