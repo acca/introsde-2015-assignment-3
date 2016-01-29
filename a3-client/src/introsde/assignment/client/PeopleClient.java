@@ -39,47 +39,56 @@ public class PeopleClient{
 		while(pi.hasNext()) {
 			pl(asString(jc,pi.next()));			
 		}
-				
+
 		// Method #2
 		pl("Method #2");
 		//jc = JAXBContext.newInstance(Person.class);
-		Person p = people.readPerson(3341);
+		Person p = people.readPerson(3349);
 		pl(asString(jc,p));
-		
-		// Method #3 ---> return person
-		pl("Method #3");
-		//jc = JAXBContext.newInstance(Person.class);
-		p.setName("XXXXXXXXX");
-		//p.setBirthdate(new Date());		
-		//Person newP = people.updatePerson(p);
-		//pl(asString(jc,newP));
-		
+
 		// Method #4 ---> return person
 		pl("Method #4");
 		//jc = JAXBContext.newInstance(Person.class);
 		Person p4 = new Person();
 		p4.setName("Person method 4");
 		p4.setLastname("Surname");		
-		people.createPerson(p);		
-		
+		int pId = people.createPerson(p4);
+		pl("--> New person created with id: " + pId);		
+		pl(asString(jc,people.readPerson(pId)));
+
+		// Method #3 ---> return person
+		pl("Method #3");
+		//jc = JAXBContext.newInstance(Person.class);
+		p4 = people.readPerson(pId);
+		p4.setName(new Date().getTime()+"");
+		p4.setEmail(new Date().getTime()+"@unitn.it");
+		//p.setBirthdate(new Date());		
+		pId = people.updatePerson(p4);
+		pl("--> New person updated with id: " + pId);
+		pl(asString(jc,people.readPerson(pId)));
+
 		// Method #5
 		pl("Method #5");
-		people.deletePerson(new Holder<Integer>(1));
-		
+		people.deletePerson(new Holder<Integer>(pId));
+		pl("--> Removed person with "+pId);
+
 		// Method #6
 		pl("Method #6");
+		pId = 3349;
 		JAXBContext mc = JAXBContext.newInstance(HealthMeasureHistory.class);
-		List<HealthMeasureHistory> ml = people.readPersonHistory(1,"weight");		
+		List<HealthMeasureHistory> ml = people.readPersonHistory(pId,"height");		
 		Iterator<HealthMeasureHistory> mi = ml.iterator();
 		while(mi.hasNext()) {
-			pl(asString(mc,pi.next()));			
+			pl(asString(mc,mi.next()));			
 		}
-		
+
 		// Method #7
 		pl("Method #7");
-		Measure m = people.readPersonMeasurement(3341, "weight", 1656);
-		m.toString();
-		
+		Measure m = people.readPersonMeasurement(pId, "height", 1758);
+		mc = JAXBContext.newInstance(Measure.class);
+		asString(mc,m);
+		//m.toString();
+
 		// Method #8
 		pl("Method #8");		
 		MeasureDefinition md = new MeasureDefinition();
@@ -89,20 +98,21 @@ public class PeopleClient{
 		m = new Measure();
 		m.setMeasureDefinition(md);
 		m.setValue("9999");
-		int id = people.savePersonMeasurement(3341, m);
+		int id = people.savePersonMeasurement(pId, m);
 		pl("new measure ID is " + id);
 		pl("---> Printing person:");
-		p = people.readPerson(3341);
+		p = people.readPerson(pId);
 		pl(asString(jc,p));
-		
+
 		// Method #9
 		pl("Method #9");
+		mc = JAXBContext.newInstance(MeasureDefinition.class);
 		List<MeasureDefinition> mdl = people.readMeasureTypes();
 		Iterator<MeasureDefinition> mdli = mdl.iterator();
 		while(mdli.hasNext()) {
-			mdli.next().toString();
+			pl(asString(mc,mdli.next()));			
 		}
-		
+
 
 		// Extra #1
 		pl("Extra #1");
