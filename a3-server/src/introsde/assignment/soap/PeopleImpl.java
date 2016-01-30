@@ -171,4 +171,35 @@ public class PeopleImpl implements People {
 		return HealthMeasureHistory.getPersonHealthMeasureHistoryByMeasureDefFilterByDate(p, md, dateBefore, dateAfter);
 	}
 
+	@Override
+	public List<Person> readPersonListByMeasurement(String measureType, String min, String max) {
+		List<Person> filteredPersonList = new ArrayList<Person>();
+		List<Person> personList = Person.getAll();
+		Iterator<Person> peopleIterator = personList.iterator();
+		while(peopleIterator.hasNext()) {
+			Person p = peopleIterator.next();
+			List<Measure> lifeStatus = p.getLifeStatus();
+			if (lifeStatus != null) {
+				Iterator<Measure> lifeStatusIterator = lifeStatus.iterator();
+				while(lifeStatusIterator.hasNext()) {
+					Measure m = lifeStatusIterator.next();
+					if (min == null){
+						if ( (Integer.parseInt(m.getValue()) < Integer.parseInt(max)) && (m.getMeasureDefinition().getMeasureName().equals(measureType)) ) {
+							filteredPersonList.add(p);
+						}	
+					} else if (max == null) {
+						if ( (Integer.parseInt(m.getValue()) > Integer.parseInt(min)) && (m.getMeasureDefinition().getMeasureName().equals(measureType)) ) {
+							filteredPersonList.add(p);
+						}
+					} else {
+						if ( (Integer.parseInt(m.getValue()) > Integer.parseInt(min)) && (Integer.parseInt(m.getValue()) < Integer.parseInt(max)) && (m.getMeasureDefinition().getMeasureName().equals(measureType)) ) {
+							filteredPersonList.add(p);
+						}
+					}					
+				}
+			}
+		}		
+		return filteredPersonList;
+	}
+
 }

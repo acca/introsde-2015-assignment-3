@@ -100,7 +100,7 @@ public class PeopleClient{
 		md = mdList.get(0);
 		m = new Measure();
 		m.setMeasureDefinition(md);
-		m.setValue("65" + new Date().getMinutes());
+		m.setValue("1" + new Date().getMinutes());
 		int id = people.savePersonMeasurement(pId, m);
 		pl("new measure ID in history is " + id);
 		pl("---> Printing person:");
@@ -141,6 +141,13 @@ public class PeopleClient{
 		}
 		// Extra #4 Method #12
 		pl("-----> Extra #4 - Method #12 - readPersonListByMeasurement");
+		
+		jc = JAXBContext.newInstance(Person.class);
+		pl = people.readPersonListByMeasurement("height", "100", "165");
+		pi = pl.iterator();
+		while(pi.hasNext()) {
+			pl(asString(jc,pi.next()));			
+		}		
 	}
 
 	private static String asString(JAXBContext pContext, Object pObject) throws JAXBException {

@@ -176,6 +176,19 @@ soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding">
    </soap:Envelope>
    #+END_EXAMPLE
 ** Extra Method 12
+   #+BEGIN_EXAMPLE
+   <soap:Envelope
+   xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+   soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding">
+   <soap:Body xmlns:m="http://soap.assignment.introsde/">
+   <m:readPersonListByMeasurement>
+      <measureType>height</measureType>
+      <min>100</min>
+      <max>165</max>
+   </m:readPersonListByMeasurement>
+   </soap:Body>
+   </soap:Envelope>
+   #+END_EXAMPLE
 * Deploy
   #+BEGIN_EXAMPLE
   acca@sirio a3-client $ ant execute.client 

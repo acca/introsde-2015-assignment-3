@@ -59,4 +59,8 @@ public interface People {
     @WebMethod(operationName="readPersonMeasureByDates")
     @WebResult(name="HealthMeasureHistory")
     public List<HealthMeasureHistory> readPersonMeasureByDates(@WebParam(name="personId")int id, @WebParam(name="measureType") String measureType, @WebParam(name="dateBefore") Date dateBefore, @WebParam(name="dateAfter") Date dateAfter);
+    
+    @WebMethod(operationName="readPersonListByMeasurement")
+    @WebResult(name="people") 
+    public List<Person> readPersonListByMeasurement(@WebParam(name="measureType") String measureType, @WebParam(name="min") String min, @WebParam(name="max") String max);
 }
