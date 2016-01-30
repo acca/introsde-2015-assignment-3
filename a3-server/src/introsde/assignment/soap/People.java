@@ -4,6 +4,7 @@ import introsde.document.model.Measure;
 import introsde.document.model.MeasureDefinition;
 import introsde.document.model.Person;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.jws.WebMethod;
@@ -54,4 +55,8 @@ public interface People {
     @WebResult(name="measureTypes")
     public List<MeasureDefinition> readMeasureTypes();
     
+    // Extra methods    
+    @WebMethod(operationName="readPersonMeasureByDates")
+    @WebResult(name="HealthMeasureHistory")
+    public List<HealthMeasureHistory> readPersonMeasureByDates(@WebParam(name="personId")int id, @WebParam(name="measureType") String measureType, @WebParam(name="dateBefore") Date dateBefore, @WebParam(name="dateAfter") Date dateAfter);
 }

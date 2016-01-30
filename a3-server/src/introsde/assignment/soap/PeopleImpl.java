@@ -111,8 +111,21 @@ public class PeopleImpl implements People {
 
 	@Override
 	public int savePersonMeasurement(int id, Measure m) {
+		if (m.getMeasureDefinition() == null) {
+			// Set default MeasureType if not present
+			MeasureDefinition md =  new MeasureDefinition();
+			md.setIdMeasureDef(2);
+			m.setMeasureDefinition(md);
+		}
 		Person p = Person.getPersonById(id);
-		Measure ls = Measure.getPersonMeasureByMeasureDef(p, m.getMeasureDefinition());
+		Measure ls = null;
+		Iterator<Measure> mi = p.getLifeStatus().iterator();
+		while (mi.hasNext()) {
+			ls = mi.next();
+			if (ls.getMeasureDefinition().getIdMeasureDef() == m.getMeasureDefinition().getIdMeasureDef()) 
+				break;
+		}
+		
 		if (ls == null) {
 			// Create person measure
         	ls = new Measure();
@@ -149,6 +162,13 @@ public class PeopleImpl implements People {
 	@Override
 	public List<MeasureDefinition> readMeasureTypes() {
 		return MeasureDefinition.getAll();
+	}
+
+	@Override
+	public List<HealthMeasureHistory> readPersonMeasureByDates(int id, String measureType, Date dateBefore, Date dateAfter) {
+		Person p = Person.getPersonById(id);
+		MeasureDefinition md = MeasureDefinition.getMeasureDefinitionByName(measureType);		
+		return HealthMeasureHistory.getPersonHealthMeasureHistoryByMeasureDefFilterByDate(p, md, dateBefore, dateAfter);
 	}
 
 }

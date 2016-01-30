@@ -35,7 +35,10 @@ import javax.xml.bind.annotation.XmlTransient;
 	@NamedQuery(name="HealthMeasureHistory.findAll", query="SELECT h FROM HealthMeasureHistory h"),
 	@NamedQuery(
 			name="HealthMeasureHistory.findPersonHistoryMeasuresWithType", 
-			query="SELECT h FROM HealthMeasureHistory h WHERE h.person = :person AND h.measureDefinition = :measureDefinition")
+			query="SELECT h FROM HealthMeasureHistory h WHERE h.person = :person AND h.measureDefinition = :measureDefinition"),
+	@NamedQuery(
+			name="HealthMeasureHistory.findPersonHistoryMeasuresWithTypeFilterByDate", 
+			query="SELECT h FROM HealthMeasureHistory h WHERE h.person = :person AND h.measureDefinition = :measureDefinition AND h.timestamp > :dateAfter AND h.timestamp < :dateBefore")
 })
 @XmlRootElement
 public class HealthMeasureHistory implements Serializable {
@@ -171,5 +174,17 @@ public class HealthMeasureHistory implements Serializable {
 				" Timestam: " + timestamp +
 				" Value: " + value +
 				" Person " + person;				
+	}
+
+	public static List<HealthMeasureHistory> getPersonHealthMeasureHistoryByMeasureDefFilterByDate(Person p, MeasureDefinition md, Date dateBefore, Date dateAfter) {
+		EntityManager em = LifeCoachDao.instance.createEntityManager();		
+	    List<HealthMeasureHistory> list = em.createNamedQuery("HealthMeasureHistory.findPersonHistoryMeasuresWithTypeFilterByDate", HealthMeasureHistory.class)
+	    		.setParameter("person", p)
+	    		.setParameter("measureDefinition", md)
+	    		.setParameter("dateBefore", dateBefore)
+	    		.setParameter("dateAfter", dateAfter)
+	    		.getResultList();
+	    LifeCoachDao.instance.closeConnections(em);
+	    return list;
 	}
 }
