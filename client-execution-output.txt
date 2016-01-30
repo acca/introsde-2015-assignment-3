@@ -1,0 +1,870 @@
+Buildfile: /Users/acca/UniTN/Corsi/introsde/development/assignments/introsde-2015-assignment-3/a3-client/build.xml
+
+execute.client:
+     [echo] ant execute.client introsde.assignment.client.PeopleClient in build
+     [java] -----> Method #1 - readPersonList
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>1978-09-02T00:00:00+02:00</birthdate>
+     [java]     <email>pavel.kucherbaev@gmail.com</email>
+     [java]     <idPerson>2</idPerson>
+     [java]     <lastname>Norris</lastname>
+     [java]     <name>Chuck</name>
+     [java]     <username>pinco</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>1979-12-12T00:00:00+01:00</birthdate>
+     [java]     <idPerson>2603</idPerson>
+     [java]     <lastname>Palleto</lastname>
+     [java]     <name>test</name>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>1987-03-03T00:00:00+01:00</birthdate>
+     [java]     <email>pavel@kucherbaev.com</email>
+     [java]     <idPerson>2703</idPerson>
+     [java]     <lastname>Kucherbaev</lastname>
+     [java]     <name>Pavel</name>
+     [java]     <username>pavelk2</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>1987-03-02T00:00:00+01:00</birthdate>
+     [java]     <idPerson>2753</idPerson>
+     [java]     <lastname>Palleto</lastname>
+     [java]     <name>test</name>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>1987-03-02T00:00:00+01:00</birthdate>
+     [java]     <idPerson>2803</idPerson>
+     [java]     <lastname>Palleto</lastname>
+     [java]     <name>test</name>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>1987-03-02T00:00:00+01:00</birthdate>
+     [java]     <idPerson>2853</idPerson>
+     [java]     <lastname>Palleto</lastname>
+     [java]     <name>test</name>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>1987-03-02T00:00:00+01:00</birthdate>
+     [java]     <idPerson>2953</idPerson>
+     [java]     <lastname>Palleto</lastname>
+     [java]     <name>test</name>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>1987-03-02T00:00:00+01:00</birthdate>
+     [java]     <idPerson>3003</idPerson>
+     [java]     <lastname>Palleto</lastname>
+     [java]     <name>test</name>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>1987-03-02T00:00:00+01:00</birthdate>
+     [java]     <idPerson>3053</idPerson>
+     [java]     <lastname>Palleto</lastname>
+     [java]     <name>test</name>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>1987-03-02T00:00:00+01:00</birthdate>
+     [java]     <idPerson>3103</idPerson>
+     [java]     <lastname>Palleto</lastname>
+     [java]     <name>test</name>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3305</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3306</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3307</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3314</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3315</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3316</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3317</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3319</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3320</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3323</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3324</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3327</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3328</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3330</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3331</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3332</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3333</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3334</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3335</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3336</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3337</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3338</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3339</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3340</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3343</idPerson>
+     [java]     <lastname>Rossi</lastname>
+     [java]     <name>XXXXXXXXX</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3344</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>XXXXXXXXX</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3345</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>XXXXXXXXX</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3346</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>XXXXXXXXX</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3347</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>XXXXXXXXX</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3348</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>XXXXXXXXX</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3349</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idPerson>3350</idPerson>
+     [java]     <lastname>Surname</lastname>
+     [java]     <name>Person method 4</name>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3389</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] -----> Method #2 - readPerson
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3349</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <currenHealth>
+     [java]         <measure>
+     [java]             <idMeasure>1955</idMeasure>
+     [java]             <measureDefinition>
+     [java]                 <idMeasureDef>2</idMeasureDef>
+     [java]                 <measureName>height</measureName>
+     [java]                 <measureType>double</measureType>
+     [java]             </measureDefinition>
+     [java]             <value>150</value>
+     [java]         </measure>
+     [java]     </currenHealth>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] -----> Method #4 - createPerson
+     [java] --> New person created with id: 3399
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idPerson>3399</idPerson>
+     [java]     <lastname>Surname</lastname>
+     [java]     <currenHealth/>
+     [java]     <name>Person method 4 1b2783b2-53e5-4a12-8d5e-19cb076cd815</name>
+     [java] </ns2:person>
+     [java] 
+     [java] -----> Method #3 - updatePerson
+     [java] --> New person updated with id: 3399
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <email>1454190703102@unitn.it</email>
+     [java]     <idPerson>3399</idPerson>
+     [java]     <lastname>Surname</lastname>
+     [java]     <currenHealth/>
+     [java]     <name>1454190703102</name>
+     [java] </ns2:person>
+     [java] 
+     [java] -----> Method #5 - deletePerson
+     [java] --> Removed person with 3399
+     [java] -----> Method #6 - readPersonHistory
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>354</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-27T17:52:58.477+01:00</timestamp>
+     [java]     <value>161</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>405</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-29T19:24:51.192+01:00</timestamp>
+     [java]     <value>9999</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>611</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T01:14:52.986+01:00</timestamp>
+     [java]     <value>161</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>612</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T01:15:42.718+01:00</timestamp>
+     [java]     <value>161</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>655</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T18:03:09.013+01:00</timestamp>
+     [java]     <value>161</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>656</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T18:06:05.011+01:00</timestamp>
+     [java]     <value>161</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>704</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T18:31:40.163+01:00</timestamp>
+     [java]     <value>161</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>754</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T18:32:32.884+01:00</timestamp>
+     [java]     <value>161</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>755</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T18:34:25.358+01:00</timestamp>
+     [java]     <value>161</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>756</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T18:34:38.519+01:00</timestamp>
+     [java]     <value>163</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>804</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T18:56:41.489+01:00</timestamp>
+     [java]     <value>65</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>854</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T21:37:27.732+01:00</timestamp>
+     [java]     <value>65</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>855</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T21:40:45.885+01:00</timestamp>
+     [java]     <value>65</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>904</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T21:45:34.124+01:00</timestamp>
+     [java]     <value>6545</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>954</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T22:46:40.030+01:00</timestamp>
+     [java]     <value>146</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>1004</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T22:49:53.856+01:00</timestamp>
+     [java]     <value>149</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>1005</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T22:50:36.255+01:00</timestamp>
+     [java]     <value>150</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] -----> Method #7 - readPersonMeasurement
+     [java] ID: 1955 value: 150 person Id: 3349
+     [java] -----> Method #8 - savePersonMeasurement
+     [java] new measure ID in history is 1054
+     [java] ---> Printing person:
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3349</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <currenHealth>
+     [java]         <measure>
+     [java]             <idMeasure>1955</idMeasure>
+     [java]             <measureDefinition>
+     [java]                 <idMeasureDef>2</idMeasureDef>
+     [java]                 <measureName>height</measureName>
+     [java]                 <measureType>double</measureType>
+     [java]             </measureDefinition>
+     [java]             <value>151</value>
+     [java]         </measure>
+     [java]     </currenHealth>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] -----> Method #9 - readMeasureTypes
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:measureDefinition xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureDef>1</idMeasureDef>
+     [java]     <measureName>weight</measureName>
+     [java]     <measureType>double</measureType>
+     [java] </ns2:measureDefinition>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:measureDefinition xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureDef>2</idMeasureDef>
+     [java]     <measureName>height</measureName>
+     [java]     <measureType>double</measureType>
+     [java] </ns2:measureDefinition>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:measureDefinition xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureDef>3</idMeasureDef>
+     [java]     <measureName>steps</measureName>
+     [java]     <measureType>integer</measureType>
+     [java] </ns2:measureDefinition>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:measureDefinition xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureDef>4</idMeasureDef>
+     [java]     <measureName>blood pressure</measureName>
+     [java]     <measureType>double</measureType>
+     [java] </ns2:measureDefinition>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:measureDefinition xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureDef>5</idMeasureDef>
+     [java]     <measureName>heart rate</measureName>
+     [java]     <measureType>integer</measureType>
+     [java] </ns2:measureDefinition>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:measureDefinition xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureDef>6</idMeasureDef>
+     [java]     <measureDefaultRange>
+     [java]         <alarmLevel>1</alarmLevel>
+     [java]         <endValue>30</endValue>
+     [java]         <idRange>1</idRange>
+     [java]         <rangeName>Overweight</rangeName>
+     [java]         <startValue>25.01</startValue>
+     [java]     </measureDefaultRange>
+     [java]     <measureDefaultRange>
+     [java]         <alarmLevel>2</alarmLevel>
+     [java]         <idRange>2</idRange>
+     [java]         <rangeName>Obesity</rangeName>
+     [java]         <startValue>30.01</startValue>
+     [java]     </measureDefaultRange>
+     [java]     <measureDefaultRange>
+     [java]         <alarmLevel>0</alarmLevel>
+     [java]         <endValue>25</endValue>
+     [java]         <idRange>3</idRange>
+     [java]         <rangeName>Normal weight</rangeName>
+     [java]         <startValue>20.01</startValue>
+     [java]     </measureDefaultRange>
+     [java]     <measureDefaultRange>
+     [java]         <alarmLevel>1</alarmLevel>
+     [java]         <endValue>20</endValue>
+     [java]         <idRange>4</idRange>
+     [java]         <rangeName>Underweight</rangeName>
+     [java]     </measureDefaultRange>
+     [java]     <measureName>bmi</measureName>
+     [java]     <measureType>double</measureType>
+     [java] </ns2:measureDefinition>
+     [java] 
+     [java] -----> Extra #1
+     [java] Database slite used.
+     [java] -----> Extra #2 - Method #10 - updatePersonMeasure
+     [java] ---> Implemented inside method #8
+     [java] -----> Extra #3 - Method #11 - readPersonMeasureByDates
+     [java] ---> reading  healthprofilehistory from 2016-01-30T21:51:43.231+01:00 to 2016-01-30T23:51:43.231+01:00
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>954</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T22:46:40.030+01:00</timestamp>
+     [java]     <value>146</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>1004</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T22:49:53.856+01:00</timestamp>
+     [java]     <value>149</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>1005</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T22:50:36.255+01:00</timestamp>
+     [java]     <value>150</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:healthMeasureHistory xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <idMeasureHistory>1054</idMeasureHistory>
+     [java]     <measureDefinition>
+     [java]         <idMeasureDef>2</idMeasureDef>
+     [java]         <measureName>height</measureName>
+     [java]         <measureType>double</measureType>
+     [java]     </measureDefinition>
+     [java]     <timestamp>2016-01-30T22:51:43.197+01:00</timestamp>
+     [java]     <value>151</value>
+     [java] </ns2:healthMeasureHistory>
+     [java] 
+     [java] -----> Extra #4 - Method #12 - readPersonListByMeasurement
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3349</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <currenHealth>
+     [java]         <measure>
+     [java]             <idMeasure>1955</idMeasure>
+     [java]             <measureDefinition>
+     [java]                 <idMeasureDef>2</idMeasureDef>
+     [java]                 <measureName>height</measureName>
+     [java]                 <measureType>double</measureType>
+     [java]             </measureDefinition>
+     [java]             <value>151</value>
+     [java]         </measure>
+     [java]     </currenHealth>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+     [java] <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+     [java] <ns2:person xmlns:ns2="http://soap.assignment.introsde/">
+     [java]     <birthdate>2016-01-01T17:47:00+01:00</birthdate>
+     [java]     <email>chuck.norris@gmail.com</email>
+     [java]     <idPerson>3389</idPerson>
+     [java]     <lastname>Rossignol</lastname>
+     [java]     <currenHealth>
+     [java]         <measure>
+     [java]             <idMeasure>2004</idMeasure>
+     [java]             <measureDefinition>
+     [java]                 <idMeasureDef>1</idMeasureDef>
+     [java]                 <measureName>weight</measureName>
+     [java]                 <measureType>double</measureType>
+     [java]             </measureDefinition>
+     [java]             <value>102</value>
+     [java]         </measure>
+     [java]         <measure>
+     [java]             <idMeasure>2005</idMeasure>
+     [java]             <measureDefinition>
+     [java]                 <idMeasureDef>2</idMeasureDef>
+     [java]                 <measureName>height</measureName>
+     [java]                 <measureType>double</measureType>
+     [java]             </measureDefinition>
+     [java]             <value>163</value>
+     [java]         </measure>
+     [java]     </currenHealth>
+     [java]     <name>Jecky</name>
+     [java]     <username>chuck.norris</username>
+     [java] </ns2:person>
+     [java] 
+
+BUILD SUCCESSFUL
+Total time: 3 seconds
