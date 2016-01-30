@@ -1,0 +1,22 @@
+diff --git a3-client/src/introsde/assignment/soap/PeopleService.java a3-client/src/introsde/assignment/soap/PeopleService.java
+index fde6901..651e276 100644
+--- a3-client/src/introsde/assignment/soap/PeopleService.java
++++ a3-client/src/introsde/assignment/soap/PeopleService.java
+@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
+  * Generated source version: 2.2
+  * 
+  */
+-@WebServiceClient(name = "PeopleService", targetNamespace = "http://soap.assignment.introsde/", wsdlLocation = "http://192.168.5.3:6902/ws/people?wsdl")
++@WebServiceClient(name = "PeopleService", targetNamespace = "http://soap.assignment.introsde/", wsdlLocation = "https://thawing-beyond-20752.herokuapp.com/ws/people?wsdl")
+ public class PeopleService
+     extends Service
+ {
+@@ -30,7 +30,7 @@ public class PeopleService
+         URL url = null;
+         WebServiceException e = null;
+         try {
+-            url = new URL("http://192.168.5.3:6902/ws/people?wsdl");
++            url = new URL("https://thawing-beyond-20752.herokuapp.com/ws/people?wsdl");
+         } catch (MalformedURLException ex) {
+             e = new WebServiceException(ex);
+         }
