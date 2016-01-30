@@ -36,7 +36,7 @@ public class PeopleClient{
 
 
 		// Method #1
-		pl("-----> Method #1");        
+		pl("-----> Method #1 - readPersonList");        
 		JAXBContext jc = JAXBContext.newInstance(Person.class);
 		List<Person> pl = people.readPersonList();
 		Iterator<Person> pi = pl.iterator();
@@ -45,13 +45,13 @@ public class PeopleClient{
 		}
 
 		// Method #2
-		pl("-----> Method #2");
+		pl("-----> Method #2 - readPerson");
 		//jc = JAXBContext.newInstance(Person.class);
 		Person p = people.readPerson(3349);
 		pl(asString(jc,p));
 
 		// Method #4 ---> return person
-		pl("-----> Method #4");
+		pl("-----> Method #4 - createPerson");
 		//jc = JAXBContext.newInstance(Person.class);
 		Person p4 = new Person();
 		String uuid = UUID.randomUUID().toString();
@@ -62,7 +62,7 @@ public class PeopleClient{
 		pl(asString(jc,people.readPerson(pId)));
 
 		// Method #3 ---> return person
-		pl("-----> Method #3");
+		pl("-----> Method #3 - updatePerson");
 		//jc = JAXBContext.newInstance(Person.class);
 		p4 = people.readPerson(pId);
 		p4.setName(new Date().getTime()+"");
@@ -73,12 +73,12 @@ public class PeopleClient{
 		pl(asString(jc,people.readPerson(pId)));
 
 		// Method #5
-		pl("-----> Method #5");
+		pl("-----> Method #5 - deletePerson");
 		people.deletePerson(new Holder<Integer>(pId));
 		pl("--> Removed person with "+pId);
 
 		// Method #6
-		pl("-----> Method #6");
+		pl("-----> Method #6 - readPersonHistory");
 		pId = 3349;
 		JAXBContext mc = JAXBContext.newInstance(HealthMeasureHistory.class);
 		List<HealthMeasureHistory> ml = people.readPersonHistory(pId,"height");		
@@ -88,7 +88,7 @@ public class PeopleClient{
 		}
 
 		// Method #7
-		pl("-----> Method #7");
+		pl("-----> Method #7 - readPersonMeasurement");
 		Measure m = people.readPersonMeasurement(pId, "height", 1955);
 		pl("ID: " + m.getIdMeasure() + " value: " + m.getValue() + " person Id: " + pId);
 		//m.toString();
@@ -118,15 +118,15 @@ public class PeopleClient{
 
 
 		// Extra #1
-		pl("Extra #1");
+		pl("-----> Extra #1");
 		pl("Database slite used.");
 
 		// Extra #2 Method #10
-		pl("Extra #2 - Method #10");
+		pl("-----> Extra #2 - Method #10 - updatePersonMeasure");
 		pl("---> Implemented inside method #8");
 
 		// Extra #3 Method #11
-		pl("Extra #3 - Method #11");
+		pl("-----> Extra #3 - Method #11 - readPersonMeasureByDates");
 		GregorianCalendar now = new GregorianCalendar();
 		XMLGregorianCalendar before = DatatypeFactory.newInstance().newXMLGregorianCalendar(now);
 		XMLGregorianCalendar after = DatatypeFactory.newInstance().newXMLGregorianCalendar(now);
@@ -140,7 +140,7 @@ public class PeopleClient{
 			pl(asString(mc,mi.next()));			
 		}
 		// Extra #4 Method #12
-		pl("Extra #4 - Method #12");
+		pl("-----> Extra #4 - Method #12 - readPersonListByMeasurement");
 	}
 
 	private static String asString(JAXBContext pContext, Object pObject) throws JAXBException {
