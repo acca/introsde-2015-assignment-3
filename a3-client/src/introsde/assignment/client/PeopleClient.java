@@ -32,7 +32,7 @@ public class PeopleClient{
 
 
 		// Method #1
-		pl("Method #1");        
+		pl("-----> Method #1");        
 		JAXBContext jc = JAXBContext.newInstance(Person.class);
 		List<Person> pl = people.readPersonList();
 		Iterator<Person> pi = pl.iterator();
@@ -41,13 +41,13 @@ public class PeopleClient{
 		}
 
 		// Method #2
-		pl("Method #2");
+		pl("-----> Method #2");
 		//jc = JAXBContext.newInstance(Person.class);
 		Person p = people.readPerson(3349);
 		pl(asString(jc,p));
 
 		// Method #4 ---> return person
-		pl("Method #4");
+		pl("-----> Method #4");
 		//jc = JAXBContext.newInstance(Person.class);
 		Person p4 = new Person();
 		p4.setName("Person method 4");
@@ -57,7 +57,7 @@ public class PeopleClient{
 		pl(asString(jc,people.readPerson(pId)));
 
 		// Method #3 ---> return person
-		pl("Method #3");
+		pl("-----> Method #3");
 		//jc = JAXBContext.newInstance(Person.class);
 		p4 = people.readPerson(pId);
 		p4.setName(new Date().getTime()+"");
@@ -68,12 +68,12 @@ public class PeopleClient{
 		pl(asString(jc,people.readPerson(pId)));
 
 		// Method #5
-		pl("Method #5");
+		pl("-----> Method #5");
 		people.deletePerson(new Holder<Integer>(pId));
 		pl("--> Removed person with "+pId);
 
 		// Method #6
-		pl("Method #6");
+		pl("-----> Method #6");
 		pId = 3349;
 		JAXBContext mc = JAXBContext.newInstance(HealthMeasureHistory.class);
 		List<HealthMeasureHistory> ml = people.readPersonHistory(pId,"height");		
@@ -83,29 +83,30 @@ public class PeopleClient{
 		}
 
 		// Method #7
-		pl("Method #7");
-		Measure m = people.readPersonMeasurement(pId, "height", 1807);
-		mc = JAXBContext.newInstance(Measure.class);
-		asString(mc,m);
+		pl("-----> Method #7");
+		Measure m = people.readPersonMeasurement(pId, "height", 1955);
+		pl("ID: " + m.getIdMeasure() + " value: " + m.getValue() + " person Id: " + pId);
 		//m.toString();
 
 		// Method #8
-		pl("Method #8");		
+		pl("-----> Method #8 - savePersonMeasurement");		
 		MeasureDefinition md = new MeasureDefinition();
-		md.setIdMeasureDef(3);
-		md.setMeasureName("steps");
-		md.setMeasureType("integer");
+//		md.setIdMeasureDef(1);
+//		md.setMeasureName("weight");
+//		md.setMeasureType("double");
+		List<MeasureDefinition> mdList = people.readMeasureTypes();
+		md = mdList.get(0);
 		m = new Measure();
 		m.setMeasureDefinition(md);
-		m.setValue("9999");
+		m.setValue("65");
 		int id = people.savePersonMeasurement(pId, m);
-		pl("new measure ID is " + id);
+		pl("new measure ID in history is " + id);
 		pl("---> Printing person:");
 		p = people.readPerson(pId);
 		pl(asString(jc,p));
 
 		// Method #9
-		pl("Method #9");
+		pl("-----> Method #9 - readMeasureTypes");
 		mc = JAXBContext.newInstance(MeasureDefinition.class);
 		List<MeasureDefinition> mdl = people.readMeasureTypes();
 		Iterator<MeasureDefinition> mdli = mdl.iterator();
@@ -120,6 +121,7 @@ public class PeopleClient{
 
 		// Extra #2 Method #10
 		pl("Extra #2 - Method #10");
+		pl("---> Implemented inside method #8");
 
 		// Extra #3 Method #11
 		pl("Extra #3 - Method #11");
