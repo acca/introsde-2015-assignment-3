@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.XmlTransient;
 			name="HealthMeasureHistory.findPersonHistoryMeasuresWithTypeFilterByDate", 
 			query="SELECT h FROM HealthMeasureHistory h WHERE h.person = :person AND h.measureDefinition = :measureDefinition AND h.timestamp > :dateAfter AND h.timestamp < :dateBefore")
 })
-@XmlRootElement
+//@XmlRootElement
 public class HealthMeasureHistory implements Serializable {
 	private static final long serialVersionUID = 1L;
 

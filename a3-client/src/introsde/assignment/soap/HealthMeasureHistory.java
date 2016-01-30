@@ -3,7 +3,6 @@ package introsde.assignment.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
@@ -21,7 +20,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="idMeasureHistory" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element ref="{http://soap.assignment.introsde/}measureDefinition" minOccurs="0"/>
+ *         &lt;element name="measureDefinition" type="{http://soap.assignment.introsde/}measureDefinition" minOccurs="0"/>
  *         &lt;element name="timestamp" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
@@ -43,7 +42,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
 public class HealthMeasureHistory {
 
     protected int idMeasureHistory;
-    @XmlElement(namespace = "http://soap.assignment.introsde/")
     protected MeasureDefinition measureDefinition;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar timestamp;

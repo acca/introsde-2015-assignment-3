@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name="MeasureDefinition")
 @NamedQuery(name="MeasureDefinition.findAll", query="SELECT m FROM MeasureDefinition m")
-@XmlRootElement
+//@XmlRootElement
 public class MeasureDefinition implements Serializable {
 	private static final long serialVersionUID = 1L;
 

@@ -111,12 +111,12 @@ public class PeopleImpl implements People {
 
 	@Override
 	public int savePersonMeasurement(int id, Measure m) {
-		if (m.getMeasureDefinition() == null) {
-			// Set default MeasureType if not present
-			MeasureDefinition md =  new MeasureDefinition();
-			md.setIdMeasureDef(2);
-			m.setMeasureDefinition(md);
-		}
+//		if (m.getMeasureDefinition() == null) {
+//			// Set default MeasureType if not present
+//			MeasureDefinition md =  new MeasureDefinition();
+//			md.setIdMeasureDef(2);
+//			m.setMeasureDefinition(md);
+//		}
 		Person p = Person.getPersonById(id);
 		Measure ls = null;
 		Iterator<Measure> mi = p.getLifeStatus().iterator();

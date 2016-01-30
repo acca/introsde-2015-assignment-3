@@ -7,6 +7,7 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.Action;
 import javax.xml.ws.Holder;
 import javax.xml.ws.RequestWrapper;
@@ -28,6 +29,42 @@ public interface People {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<introsde.assignment.soap.Person>
+     */
+    @WebMethod
+    @WebResult(name = "people", targetNamespace = "")
+    @RequestWrapper(localName = "readPersonList", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.ReadPersonList")
+    @ResponseWrapper(localName = "readPersonListResponse", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.ReadPersonListResponse")
+    @Action(input = "http://soap.assignment.introsde/People/readPersonListRequest", output = "http://soap.assignment.introsde/People/readPersonListResponse")
+    public List<Person> readPersonList();
+
+    /**
+     * 
+     * @param dateAfter
+     * @param dateBefore
+     * @param personId
+     * @param measureType
+     * @return
+     *     returns java.util.List<introsde.assignment.soap.HealthMeasureHistory>
+     */
+    @WebMethod
+    @WebResult(name = "HealthMeasureHistory", targetNamespace = "")
+    @RequestWrapper(localName = "readPersonMeasureByDates", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.ReadPersonMeasureByDates")
+    @ResponseWrapper(localName = "readPersonMeasureByDatesResponse", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.ReadPersonMeasureByDatesResponse")
+    @Action(input = "http://soap.assignment.introsde/People/readPersonMeasureByDatesRequest", output = "http://soap.assignment.introsde/People/readPersonMeasureByDatesResponse")
+    public List<HealthMeasureHistory> readPersonMeasureByDates(
+        @WebParam(name = "personId", targetNamespace = "")
+        int personId,
+        @WebParam(name = "measureType", targetNamespace = "")
+        String measureType,
+        @WebParam(name = "dateBefore", targetNamespace = "")
+        XMLGregorianCalendar dateBefore,
+        @WebParam(name = "dateAfter", targetNamespace = "")
+        XMLGregorianCalendar dateAfter);
+
+    /**
+     * 
      * @param personId
      * @return
      *     returns introsde.assignment.soap.Person
@@ -40,18 +77,6 @@ public interface People {
     public Person readPerson(
         @WebParam(name = "personId", targetNamespace = "")
         int personId);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<introsde.assignment.soap.Person>
-     */
-    @WebMethod
-    @WebResult(name = "people", targetNamespace = "")
-    @RequestWrapper(localName = "readPersonList", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.ReadPersonList")
-    @ResponseWrapper(localName = "readPersonListResponse", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.ReadPersonListResponse")
-    @Action(input = "http://soap.assignment.introsde/People/readPersonListRequest", output = "http://soap.assignment.introsde/People/readPersonListResponse")
-    public List<Person> readPersonList();
 
     /**
      * 

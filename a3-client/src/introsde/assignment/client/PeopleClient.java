@@ -2,13 +2,17 @@ package introsde.assignment.client;
 
 import java.io.StringWriter;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
+import java.util.UUID;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.Holder;
 
 import introsde.assignment.soap.PeopleService;
@@ -50,7 +54,8 @@ public class PeopleClient{
 		pl("-----> Method #4");
 		//jc = JAXBContext.newInstance(Person.class);
 		Person p4 = new Person();
-		p4.setName("Person method 4");
+		String uuid = UUID.randomUUID().toString();
+		p4.setName("Person method 4 " + uuid);
 		p4.setLastname("Surname");		
 		int pId = people.createPerson(p4);
 		pl("--> New person created with id: " + pId);		
@@ -91,14 +96,11 @@ public class PeopleClient{
 		// Method #8
 		pl("-----> Method #8 - savePersonMeasurement");		
 		MeasureDefinition md = new MeasureDefinition();
-//		md.setIdMeasureDef(1);
-//		md.setMeasureName("weight");
-//		md.setMeasureType("double");
 		List<MeasureDefinition> mdList = people.readMeasureTypes();
 		md = mdList.get(0);
 		m = new Measure();
 		m.setMeasureDefinition(md);
-		m.setValue("65");
+		m.setValue("65" + new Date().getMinutes());
 		int id = people.savePersonMeasurement(pId, m);
 		pl("new measure ID in history is " + id);
 		pl("---> Printing person:");
@@ -125,7 +127,18 @@ public class PeopleClient{
 
 		// Extra #3 Method #11
 		pl("Extra #3 - Method #11");
-
+		GregorianCalendar now = new GregorianCalendar();
+		XMLGregorianCalendar before = DatatypeFactory.newInstance().newXMLGregorianCalendar(now);
+		XMLGregorianCalendar after = DatatypeFactory.newInstance().newXMLGregorianCalendar(now);
+		after.setHour(after.getHour()-1);
+		before.setHour(before.getHour()+1);		
+		pl("---> reading  healthprofilehistory from " + after + " to " + before);
+		mc = JAXBContext.newInstance(HealthMeasureHistory.class);
+		ml = people.readPersonMeasureByDates(3349, "height", before, after);		
+		mi = ml.iterator();
+		while(mi.hasNext()) {
+			pl(asString(mc,mi.next()));			
+		}
 		// Extra #4 Method #12
 		pl("Extra #4 - Method #12");
 	}

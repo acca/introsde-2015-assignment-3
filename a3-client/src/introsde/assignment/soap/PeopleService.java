@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "PeopleService", targetNamespace = "http://soap.assignment.introsde/", wsdlLocation = "http://localhost:6902/ws/people?wsdl")
+@WebServiceClient(name = "PeopleService", targetNamespace = "http://soap.assignment.introsde/", wsdlLocation = "http://192.168.5.3:6902/ws/people?wsdl")
 public class PeopleService
     extends Service
 {

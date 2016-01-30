@@ -22,7 +22,7 @@ import java.util.List;
 @Entity
 @Table(name="Person")
 @NamedQuery(name="Person.findAll", query="SELECT p FROM Person p")
-@XmlRootElement
+//@XmlRootElement
 public class Person implements Serializable {
 	private static final long serialVersionUID = 1L;
 

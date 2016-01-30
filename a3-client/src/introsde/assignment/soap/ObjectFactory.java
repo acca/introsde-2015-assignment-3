@@ -34,17 +34,15 @@ public class ObjectFactory {
     private final static QName _SavePersonMeasurementResponse_QNAME = new QName("http://soap.assignment.introsde/", "savePersonMeasurementResponse");
     private final static QName _ReadPerson_QNAME = new QName("http://soap.assignment.introsde/", "readPerson");
     private final static QName _ReadPersonList_QNAME = new QName("http://soap.assignment.introsde/", "readPersonList");
-    private final static QName _Measure_QNAME = new QName("http://soap.assignment.introsde/", "Measure");
-    private final static QName _MeasureDefaultRange_QNAME = new QName("http://soap.assignment.introsde/", "measureDefaultRange");
     private final static QName _UpdatePerson_QNAME = new QName("http://soap.assignment.introsde/", "updatePerson");
     private final static QName _ReadPersonMeasurementResponse_QNAME = new QName("http://soap.assignment.introsde/", "readPersonMeasurementResponse");
-    private final static QName _HealthMeasureHistory_QNAME = new QName("http://soap.assignment.introsde/", "healthMeasureHistory");
     private final static QName _CreatePersonResponse_QNAME = new QName("http://soap.assignment.introsde/", "createPersonResponse");
     private final static QName _DeletePerson_QNAME = new QName("http://soap.assignment.introsde/", "deletePerson");
+    private final static QName _ReadPersonMeasureByDates_QNAME = new QName("http://soap.assignment.introsde/", "readPersonMeasureByDates");
     private final static QName _ReadMeasureTypesResponse_QNAME = new QName("http://soap.assignment.introsde/", "readMeasureTypesResponse");
     private final static QName _ReadMeasureTypes_QNAME = new QName("http://soap.assignment.introsde/", "readMeasureTypes");
     private final static QName _CreatePerson_QNAME = new QName("http://soap.assignment.introsde/", "createPerson");
-    private final static QName _MeasureDefinition_QNAME = new QName("http://soap.assignment.introsde/", "measureDefinition");
+    private final static QName _ReadPersonMeasureByDatesResponse_QNAME = new QName("http://soap.assignment.introsde/", "readPersonMeasureByDatesResponse");
     private final static QName _ReadPersonMeasurement_QNAME = new QName("http://soap.assignment.introsde/", "readPersonMeasurement");
 
     /**
@@ -79,14 +77,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link HealthMeasureHistory }
-     * 
-     */
-    public HealthMeasureHistory createHealthMeasureHistory() {
-        return new HealthMeasureHistory();
-    }
-
-    /**
      * Create an instance of {@link ReadPersonMeasurementResponse }
      * 
      */
@@ -103,19 +93,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ReadPersonMeasureByDates }
+     * 
+     */
+    public ReadPersonMeasureByDates createReadPersonMeasureByDates() {
+        return new ReadPersonMeasureByDates();
+    }
+
+    /**
      * Create an instance of {@link CreatePerson }
      * 
      */
     public CreatePerson createCreatePerson() {
         return new CreatePerson();
-    }
-
-    /**
-     * Create an instance of {@link MeasureDefinition }
-     * 
-     */
-    public MeasureDefinition createMeasureDefinition() {
-        return new MeasureDefinition();
     }
 
     /**
@@ -132,6 +122,14 @@ public class ObjectFactory {
      */
     public ReadPersonMeasurement createReadPersonMeasurement() {
         return new ReadPersonMeasurement();
+    }
+
+    /**
+     * Create an instance of {@link ReadPersonMeasureByDatesResponse }
+     * 
+     */
+    public ReadPersonMeasureByDatesResponse createReadPersonMeasureByDatesResponse() {
+        return new ReadPersonMeasureByDatesResponse();
     }
 
     /**
@@ -215,19 +213,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Measure }
-     * 
-     */
-    public Measure createMeasure() {
-        return new Measure();
-    }
-
-    /**
      * Create an instance of {@link UpdatePerson }
      * 
      */
     public UpdatePerson createUpdatePerson() {
         return new UpdatePerson();
+    }
+
+    /**
+     * Create an instance of {@link HealthMeasureHistory }
+     * 
+     */
+    public HealthMeasureHistory createHealthMeasureHistory() {
+        return new HealthMeasureHistory();
+    }
+
+    /**
+     * Create an instance of {@link MeasureDefinition }
+     * 
+     */
+    public MeasureDefinition createMeasureDefinition() {
+        return new MeasureDefinition();
+    }
+
+    /**
+     * Create an instance of {@link Measure }
+     * 
+     */
+    public Measure createMeasure() {
+        return new Measure();
     }
 
     /**
@@ -337,24 +351,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Measure }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "Measure")
-    public JAXBElement<Measure> createMeasure(Measure value) {
-        return new JAXBElement<Measure>(_Measure_QNAME, Measure.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MeasureDefaultRange }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "measureDefaultRange")
-    public JAXBElement<MeasureDefaultRange> createMeasureDefaultRange(MeasureDefaultRange value) {
-        return new JAXBElement<MeasureDefaultRange>(_MeasureDefaultRange_QNAME, MeasureDefaultRange.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link UpdatePerson }{@code >}}
      * 
      */
@@ -373,15 +369,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HealthMeasureHistory }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "healthMeasureHistory")
-    public JAXBElement<HealthMeasureHistory> createHealthMeasureHistory(HealthMeasureHistory value) {
-        return new JAXBElement<HealthMeasureHistory>(_HealthMeasureHistory_QNAME, HealthMeasureHistory.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CreatePersonResponse }{@code >}}
      * 
      */
@@ -397,6 +384,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "deletePerson")
     public JAXBElement<DeletePerson> createDeletePerson(DeletePerson value) {
         return new JAXBElement<DeletePerson>(_DeletePerson_QNAME, DeletePerson.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReadPersonMeasureByDates }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "readPersonMeasureByDates")
+    public JAXBElement<ReadPersonMeasureByDates> createReadPersonMeasureByDates(ReadPersonMeasureByDates value) {
+        return new JAXBElement<ReadPersonMeasureByDates>(_ReadPersonMeasureByDates_QNAME, ReadPersonMeasureByDates.class, null, value);
     }
 
     /**
@@ -427,12 +423,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MeasureDefinition }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReadPersonMeasureByDatesResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "measureDefinition")
-    public JAXBElement<MeasureDefinition> createMeasureDefinition(MeasureDefinition value) {
-        return new JAXBElement<MeasureDefinition>(_MeasureDefinition_QNAME, MeasureDefinition.class, null, value);
+    @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "readPersonMeasureByDatesResponse")
+    public JAXBElement<ReadPersonMeasureByDatesResponse> createReadPersonMeasureByDatesResponse(ReadPersonMeasureByDatesResponse value) {
+        return new JAXBElement<ReadPersonMeasureByDatesResponse>(_ReadPersonMeasureByDatesResponse_QNAME, ReadPersonMeasureByDatesResponse.class, null, value);
     }
 
     /**

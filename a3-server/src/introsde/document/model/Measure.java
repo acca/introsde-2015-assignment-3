@@ -30,7 +30,7 @@ import javax.persistence.OneToOne;
 @Entity
 @Table(name = "LifeStatus")
 @NamedQuery(name = "Measure.findAll", query = "SELECT l FROM Measure l")
-@XmlRootElement(name="Measure")
+//@XmlRootElement(name="Measure")
 public class Measure implements Serializable {
 	private static final long serialVersionUID = 1L;
 
