@@ -224,5 +224,5 @@
 * Demo
   - Client demo output available here: [[file:client-execution-output.txt][client output]]
   - Server demo output available here: [[file:server-execution-output.txt][server output]]
-  - Heroku deployment: https://thawing-beyond-20752.herokuapp.com/ws/people
+  - Heroku deployment: https://evening-sea-11584.herokuapp.com/ws/people
     - /Use branch *heroku* to have client with correct app URL/
